@@ -5,7 +5,10 @@ import android.net.DhcpInfo;
 import android.net.wifi.WifiManager;
 import android.util.Log;
 
+import java.net.NetworkInterface;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
