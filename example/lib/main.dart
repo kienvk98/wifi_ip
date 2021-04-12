@@ -12,7 +12,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  WifiIpInfo _result;
+  WifiIpInfo? _result;
 
   @override
   void initState() {
@@ -23,7 +23,7 @@ class _MyAppState extends State<MyApp> {
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
     // Platform messages may fail, so we use a try/catch PlatformException.
-    WifiIpInfo info;
+    WifiIpInfo? info;
     try {
       info = await WifiIp.getWifiIp;
     } on PlatformException {
@@ -53,9 +53,9 @@ class _MyAppState extends State<MyApp> {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text("IP: ${_result.ip}"),
-              Text("Netmask: ${_result.netmask}"),
-              Text("Broadcast IP: ${_result.broadcastIP}"),
+              Text("IP: ${_result?.ip}"),
+              Text("Netmask: ${_result?.netmask}"),
+              Text("Broadcast IP: ${_result?.broadcastIP}"),
             ],
           ),
         ),
